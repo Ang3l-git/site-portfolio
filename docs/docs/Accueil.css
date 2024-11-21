@@ -1,0 +1,191 @@
+html {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #181818;
+    overflow-x: hidden;
+    color: #ffffff;
+}
+header {
+    background: #292929;
+    color: #ffffff;
+    animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.aboutme img {
+    width: 15%;
+    border-radius: 15px;
+    
+}
+
+
+.topbar li {
+    float: left;
+
+}
+
+.topbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.topbar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px;
+}
+
+.topbar a:hover {
+    background-color: #161616;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #242424;
+    color: #fff;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: small;
+    margin: 0;
+    font-size: 30px;
+}
+
+
+.borderperso {
+    background: #242424;
+    position: relative;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20%;
+    padding: 0;
+    margin-top: 40px;
+    margin-left: 20rem;
+    height: auto;
+}
+
+.borderperso::after, .borderperso::before{
+    content: '';
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    background: red;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+    background-image: conic-gradient(from var(--angle), #0011ff, #00aeff, #00aeff, #0021df);
+}
+
+.borderperso::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin{
+    from{
+      --angle: 0deg;
+    }
+    to{
+      --angle: 360deg;
+    }
+}
+
+span {
+    padding-top: 25px;
+}
+
+.wrapper {
+    display: flex;
+}
+.wrapper .first-text {
+    font-size: 60px;
+    color: #fff;
+}
+.wrapper .sec-texts {
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+.sec-texts li {
+    position: relative;
+    top: 0;
+    font-size: 60px;
+    color: #0ef;
+    list-style: none;
+    padding: 0 20px;
+    text-shadow: 0 0 10px #0ef;
+    animation: slide 12s steps(4) infinite, colorful 6s infinite;
+}
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+@keyframes colorful {
+    100% {
+        filter: hue-rotate(40deg);
+    }
+}
+.sec-texts li span {
+    position: relative;
+}
+.sec-texts li span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 400px;
+    height: 90px;
+    background: #242424;
+    border-left: 2px solid #0ef;
+    animation: typing 1.5s steps(10) infinite alternate;
+}
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-photo {
+        width: 100px;
+    }
+
+    .container {
+        width: 95%;
+    }
+}
